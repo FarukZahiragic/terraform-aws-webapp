@@ -73,7 +73,7 @@ async function seed() {
     } catch (error) {
         console.error("Greška pri seedovanju baze:", error);
     } finally {
-        await sequelize.close();
+        
     }
 }
 
