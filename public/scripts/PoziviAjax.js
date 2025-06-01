@@ -63,7 +63,7 @@ const PoziviAjax = (() => {
                 }
             }
         };
-        ajax.open("GET", `http://localhost:3000/nekretnine/top5?lokacija=${encodeURIComponent(lokacija)}`, true);
+        ajax.open("GET", `/nekretnine/top5?lokacija=${encodeURIComponent(lokacija)}`, true);
         ajax.send();
     }
 
@@ -80,7 +80,7 @@ const PoziviAjax = (() => {
                 }
             }
         };
-        ajax.open("GET", "http://localhost:3000/upiti/moji", true);
+        ajax.open("GET", "/upiti/moji", true);
         ajax.send();
     }
 
@@ -97,7 +97,7 @@ const PoziviAjax = (() => {
                 }
             }
         };
-        ajax.open("GET", `http://localhost:3000/nekretnina/${nekretnina_id}`, true);
+        ajax.open("GET", `/nekretnina/${nekretnina_id}`, true);
         ajax.send();
     }
 
@@ -114,7 +114,7 @@ const PoziviAjax = (() => {
                 }
             }
         };
-        ajax.open("GET", `http://localhost:3000/next/upiti/nekretnina${nekretnina_id}?page=${page}`, true);
+        ajax.open("GET", `/next/upiti/nekretnina${nekretnina_id}?page=${page}`, true);
         ajax.send();
     }
 
@@ -143,7 +143,7 @@ const PoziviAjax = (() => {
             }
         };
 
-        ajax.open("GET", "http://localhost:3000/korisnik/", true);
+        ajax.open("GET", "/korisnik/", true);
         ajax.setRequestHeader("Content-Type", "application/json");
         ajax.send();
     }
@@ -221,7 +221,7 @@ const PoziviAjax = (() => {
                 fnCallback(ajax.statusText, null)
             }
         }
-        ajax.open("POST", "http://localhost:3000/login", true)
+        ajax.open("POST", "/login", true)
         ajax.setRequestHeader("Content-Type", "application/json")
         var objekat = {
             "username": username,
@@ -243,7 +243,7 @@ const PoziviAjax = (() => {
                 fnCallback(ajax.statusText, null)
             }
         }
-        ajax.open("POST", "http://localhost:3000/logout", true)
+        ajax.open("POST", "/logout", true)
         ajax.send()
     }
 

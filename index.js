@@ -5,6 +5,8 @@ const fs = require('fs').promises; // Using asynchronus API for file read and wr
 const bcrypt = require('bcrypt');
 const { Korisnik, Nekretnina, Upit, Zahtjev, Ponuda, sequelize } = require("./models");
 
+
+
 const app = express();
 const PORT = 3000;
 
@@ -20,8 +22,9 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 
 sequelize.sync({ alter: true })
-  .then(() => {
+  .then(async () => {
     console.log("Baza podataka je uspješno sinhronizovana.");
+    await require('./seed.js');
   })
   .catch(err => {
     console.error("Greška prilikom sinhronizacije baze podataka:", err);
@@ -311,7 +314,7 @@ app.post('/login', async (req, res) => {
   try {
     const korisnik = await Korisnik.findOne({ where: { username } });
     // moze se dekomentarisati radi lakseg testiranja
-    if (korisnik && password == /*korisnik.password*/await bcrypt.compare(password, korisnik.password)) {
+    if (korisnik && /*password == korisnik.password*/await bcrypt.compare(password, korisnik.password)) {
       req.session.username = korisnik.username;
       loginAttempts.delete(username); // Reset attempts on success
       await logLoginAttempt(username, 'uspješno');
