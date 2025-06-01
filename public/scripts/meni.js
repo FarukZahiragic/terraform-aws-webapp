@@ -42,7 +42,7 @@ window.onload = function () {
           window.alert(err);
         } else {
           // Redirektujem se nazad na pocetnu stranicu prijava.html
-          window.location.href = "http://localhost:3000/prijava.html";
+          window.location.href = "/prijava.html";
         }
   
         // Update menu for login status inside the callback
