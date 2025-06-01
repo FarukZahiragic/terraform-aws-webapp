@@ -22,9 +22,9 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 
 sequelize.sync({ alter: true })
-  .then(() => {
+  .then(async () => {
     console.log("Baza podataka je uspješno sinhronizovana.");
-    require('./seed.js');
+    await require('./seed.js');
   })
   .catch(err => {
     console.error("Greška prilikom sinhronizacije baze podataka:", err);
