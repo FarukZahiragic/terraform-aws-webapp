@@ -1,0 +1,54 @@
+Komentar na postojeći projekat:
+Postojeći projekat ima kostur izgleda web aplikacije, međutim primjetno je i određeno neočekivano ponašanje.
+Jedno takvo ponašanje je da se klikom na neki od linkova u meni-u sa stranica koje nisu meni ne otvara tu stranicu već je prikazuje u iframe elementu.
+Također je primjetno da postoji dosta koda koji je zajednički za sve stranice, konkretno CSS koda koji se može izdvojiti u jedan CSS file.
+U startnom projektu meni linkovi nisu radili van meni.html stranice, tj. učitavali su se unutar iframe elementa, što sam ispravio.
+
+Spirala 1:
+Zadatak 1:
+Pozitivno je što su list itemi prikazani jedan pored drugog. Negativna strana postojeće implementacije je bila što se nije koristio flexbox, jer je to otežalo pozicioniranje ikona.
+S obzirom na moj odabir ikona hoveranjem na ikone se uveća ikona zbog specifičnog oblika pojedinih ikona ne prekrije svaka ikona tekst iza same ikone.
+
+Zadatak 2:
+Olakšavajuća okolnost u ovom zadatku je što izmjena grida u flexbox nije zahtjevala značajne izmjene u kodu.
+Otežavajuća okolnost u ovom zadatku je bila što je teško ekvivalentirati grid sa flexboxom. Problem se javlja što se centiranjem samog flexboxa također centiraruju i pojedinačni redovi unutar flexboxa, tako da, barem po mom istraživanju, nije bilo moguće rekreirati left-align redova i istovremeno držati flexbox centriranim kao kod grida. Moglo se posti'i samo jedno od tih funkcionalnosti, ali ne i oba istovremeno zbog samog ponašanja flexboxa. Jedino bi dodavanjem divova za svaki red možda mogla napraviti takva izmjena sa flexboxom ali to krši zabranu izmjene HTML koda.
+
+Zadatak 3:
+Nije bilo spornih dijelova, pokušao sam sa što manje izmjena ostvariti željenu funkcionalnost.
+
+Bila je greška što nije pisalo <img src="../Resources/stan/stan1.jpg" alt="Nekretnina"> u detalji.html
+
+Zadatak 4:
+Kontroverzan dio ovoga zadatka se odnosio na različit raspored elemenata za displeje veće od 800px i manje od 800px. Kao što se i navodila na komentarima Piazza foruma, način popunjavanja div elemenata vijesti se razlikovao u ta dva slučaja na osnovu priloženih slika u postavci. Na osnovu zaključaka iz tih komentara na Piazza forumu sam dodao izmjenu za displeje ispod 800px tako da se koristi grid-template-ares za custom raspored početnih elemenata. Naravno, novododani elementi se popunjavaju slijeva na desno kao i inače. Varijanta bez te custom modifikacije, je također vidljiva u prijašnjim commitima.
+
+------------
+
+Spirala 2:
+
+Zadatak 1:
+U ovom zadatku sam dodao funkcionalnost dugmadima unutar carousela. S obzirom da smo na prijasnjoj spirali implementirali carousel samo za displeje ispod 600px i ovdje sam prikazao dugmadi za carousel na displejima ispod 600px.
+
+Zadatak 2:
+Iako nije naglaseno, za metodu mojeNekretnine sam sortirao nekretnine po broju upita od strane odgovarajuceg korisnika jer je dosta smislenije organizovati takav ispis. Sto se tice kriterija, kako sam shvatio iz postavke i koda iz SpisakNekretnina.js i nekretnine.js filea, koriste se kriteriji iz filtrirajNekretnine metode, te jos dodatno preostali atributi nekretnina objekta, pa sam i te koristio.
+
+Zadatak 3:
+U zadatku 3 sam radio validaciju formata unosa u textarea inpute. Medjutim s obzirom da filtrirajNekretnine funkcija u slucaju nepostojeceg unosa za proslijedjeni kriterij  ne filtrira nekretnine, ostavio sam da ne filtrira u tom slucaju. Npr "tip_nekretnine": "blabla" vraca sve nekretnine, dakle filter se ne primjenjuje jer je tako implementirana filtrirajNekretnine metoda.
+
+--------------
+
+Spirala 3:
+
+Zadatak 1:
+Zadatak je uradjen po specifikaciji, sa dodanim sugestijama na osnovu Piazza komentara. Takodjer, iako za neke ture nije naglaseno vracao sam 500 kao error code, na mjestima gdje se desi neocekivana izuzetak.
+
+Zadatak 2:
+Dodan je PoziviAjax.js file identican kao u startnom projektu, te su na njemu izvrseni trazeni zahvati.
+Izvrsena je modifikacija nekretnine.html tako da bude skoro pa identicna kao iz pocetnog projekta.
+Izvrsena je modifikacija detalji.html i detalji.js tako da se dinamicki popunjavaju podaci te stranice.
+mojiUpiti.hmtl se prikazuje u meniu samo ako je korsnik prijavljen, sto je konzistentno sa ostalim stranicama aplikacije.
+Za prikazivanje top5Nekretnina klikom na lokaciju u detalji.html sam koristio prikaz u nekretnine.html jer mi se taj pristup cinio najpreglednijim.
+Kod prikazivanja carousela su radi cisceg koda prikazana prva 3 upita u obrnutom redoslijedu od vremena kreiranja upita (tj. 3-2-1, iako su uneseni u redoslijedu 1-2-3). Na piazzi je bio postavljen upit vezan za ovu polemiku gdje je i ova implementacija odobrena.
+U orginalnom kodu je uoceno da logout ne radi ispravno (ne radi se redirect prema prijava.html), i slicna ponasanja. Nisam htio mijenjati ove dijelove koda jer one nisu bile zahtijevane u sklopu spirale, pa sam ih ostavio kao u startnom projektu.
+
+Spirala 4
+Kao i na spirali 3 i u ovoj sam prilikom testiranja zakomentarisao kod vezan za koristenje bcrypt-a, i zamijenio ga obicnom validacijom sto moze olaksati provjeru ispravnosti koda. Prikaz interesovanja sam realizovao u jednom carouselu.

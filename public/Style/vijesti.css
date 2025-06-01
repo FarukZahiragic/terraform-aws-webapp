@@ -1,0 +1,105 @@
+.glavniSadrzaj {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.vijest {
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.glavnaVijest {
+    grid-column: span 4;
+    aspect-ratio: 2 / 1;
+    background-color: #77f;
+}
+
+.glavnaVijest img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.visokaVijest {
+    grid-column: span 1;
+    grid-row: span 2;
+    aspect-ratio: 1 / 2;
+    background-color: #ff7;
+}
+
+.kvadratnaVijest {
+    grid-column: span 1;
+    aspect-ratio: 1 / 1;
+    background-color: #f77;
+}
+
+@media (max-width: 800px) {
+    #glavnaVijest1 {
+        grid-area: glavnaVijest1;
+    }
+
+    #visokaVijest1 {
+        grid-area: visokaVijest1;
+    }
+
+    #visokaVijest2 {
+        grid-area: visokaVijest2;
+    }
+
+    #kvadratnaVijest1 {
+        grid-area: kvadratnaVijest1;
+    }
+
+    #kvadratnaVijest2 {
+        grid-area: kvadratnaVijest2;
+    }
+
+    #kvadratnaVijest3 {
+        grid-area: kvadratnaVijest3;
+    }
+
+    #kvadratnaVijest4 {
+        grid-area: kvadratnaVijest4;
+    }
+
+    #kvadratnaVijest5 {
+        grid-area: kvadratnaVijest5;
+    }
+
+    #kvadratnaVijest6 {
+        grid-area: kvadratnaVijest6;
+    }
+
+    #kvadratnaVijest7 {
+        grid-area: kvadratnaVijest7;
+    }
+
+    #kvadratnaVijest8 {
+        grid-area: kvadratnaVijest8;
+    }
+
+    .glavniSadrzaj {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        'glavnaVijest1 glavnaVijest1'
+        'visokaVijest1 kvadratnaVijest1'
+        'visokaVijest1 kvadratnaVijest2'
+        'kvadratnaVijest3 visokaVijest2'
+        'kvadratnaVijest4 visokaVijest2'
+        'kvadratnaVijest5 kvadratnaVijest6'
+        'kvadratnaVijest7 kvadratnaVijest8'
+        'visokaVijest3 visokaVijest4'
+        'visokaVijest3 visokaVijest4';
+    }
+
+    .glavnaVijest {
+        grid-column: span 2;
+        aspect-ratio: 1 / 1;
+    }
+
+    .visokaVijest {
+        grid-column: span 1;
+    }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="bs-BA">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalji</title>
+    <link rel="stylesheet" type="text/css" href="../Style/common.css">
+    <link rel="stylesheet" type="text/css" href="../Style/detalji.css">
+</head>
+
+<body>
+    <iframe src="meni.html"></iframe>
+
+    <div id="osnovno">
+        <img id="slikaNekretnine" src="" alt="Slika nekretnine">
+        <p><strong>Naziv:</strong> <span id="nazivNekretnine"></span></p>
+        <p><strong>Kvadratura:</strong> <span id="kvadraturaNekretnine"></span></p>
+        <p><strong>Cijena:</strong> <span id="cijenaNekretnine"></span></p>
+    </div>
+
+    <h3>DETALJI</h3>
+    <div id="detalji">
+        <div id="kolona1">
+            <p><strong>Tip grijanja:</strong> <span id="tipGrijanja"></span></p>
+        </div>
+        <div id="kolona2">
+            <p><strong>Godina izgradnje:</strong> <span id="godinaIzgradnje"></span></p>
+        </div>
+        <div id="kolona3">
+            <p><strong>Lokacija:</strong> <span id="lokacija"></span></p>
+        </div>
+        <div id="opis">
+            <p><strong>Opis:</strong> <span id="opisNekretnine"></span></p>
+        </div>
+    </div>
+
+    <h3>UPITI</h3>
+    <div id="upiti">
+        <!-- Upiti će se dinamički popunjavati -->
+    </div>
+
+    <h3>DODAJ INTERESOVANJE</h3>
+    <div id="formaInteresovanje">
+        <form id="dodajInteresovanje">
+            <label for="tipInteresovanja">Tip interesovanja:</label>
+            <select id="tipInteresovanja" name="tipInteresovanja">
+                <option value="upit">Upit</option>
+                <option value="zahtjev">Zahtjev</option>
+                <option value="ponuda">Ponuda</option>
+            </select>
+
+            <div id="upitPolja">
+                <label for="tekstUpita">Tekst:</label>
+                <textarea id="tekstUpita" name="tekstUpita"></textarea>
+            </div>
+
+            <div id="zahtjevPolja" style="display: none;">
+                <label for="tekstZahtjeva">Tekst:</label>
+                <textarea id="tekstZahtjeva" name="tekstZahtjeva"></textarea>
+                <label for="datumZahtjeva">Traženi datum:</label>
+                <input type="date" id="datumZahtjeva" name="datumZahtjeva">
+            </div>
+
+            <div id="ponudaPolja" style="display: none;">
+                <label for="tekstPonude">Tekst:</label>
+                <textarea id="tekstPonude" name="tekstPonude"></textarea>
+                <label for="cijenaPonude">Cijena ponude:</label>
+                <input type="number" id="cijenaPonude" name="cijenaPonude">
+                <label for="vezanaPonuda">ID vezane ponude:</label>
+                <select id="vezanaPonuda" name="vezanaPonuda" disabled>
+                    <option value="">Nema vezanih ponuda</option>
+                </select>
+                <label for="odbijenaPonuda">Odbijena ponuda:</label>
+                <input type="checkbox" id="odbijenaPonuda" name="odbijenaPonuda">
+            </div>
+
+            <button type="submit">Dodaj interesovanje</button>
+        </form>
+    </div>
+
+
+    <script src="../scripts/PoziviAjax.js"></script>
+    <script src="../scripts/detalji.js"></script>
+</body>
+
+</html>
