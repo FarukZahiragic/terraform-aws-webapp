@@ -1,6 +1,6 @@
 FROM node:latest
 
-WORKDIR /wt24p19382
+WORKDIR /tim13-projekat
 
 COPY package.json package.json
 COPY package-lock.json package-lock.json
