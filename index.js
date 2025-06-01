@@ -24,12 +24,12 @@ app.use(express.json());
 sequelize.sync({ alter: true })
   .then(() => {
     console.log("Baza podataka je uspješno sinhronizovana.");
+    require('./seed.js');
   })
   .catch(err => {
     console.error("Greška prilikom sinhronizacije baze podataka:", err);
   });
 
-require('./seed.js');
 /* ---------------- SERVING HTML -------------------- */
 
 // Async function for serving html files
