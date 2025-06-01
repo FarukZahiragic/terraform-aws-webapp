@@ -5,7 +5,7 @@
           {
             "hostPort": 80,
             "protocol": "tcp",
-            "containerPort": 8080
+            "containerPort": 3000
           }
         ],
         "cpu": 256,
