@@ -314,7 +314,7 @@ app.post('/login', async (req, res) => {
   try {
     const korisnik = await Korisnik.findOne({ where: { username } });
     // moze se dekomentarisati radi lakseg testiranja
-    if (korisnik && password == /*korisnik.password*/await bcrypt.compare(password, korisnik.password)) {
+    if (korisnik && /*password == korisnik.password*/await bcrypt.compare(password, korisnik.password)) {
       req.session.username = korisnik.username;
       loginAttempts.delete(username); // Reset attempts on success
       await logLoginAttempt(username, 'uspješno');
