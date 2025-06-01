@@ -69,5 +69,5 @@ deploy_database:
     CI_AWS_ECS_TASK_DEFINITION_FILE: database-task.json
     CI_AWS_TASK_DEFINITION: database-task
     CI_AWS_TASK_EXECUTION_ROLE_NAME: LabRole
-    MYSQL_DATABASE: DBWT19
+    MYSQL_DATABASE: wt24
     
