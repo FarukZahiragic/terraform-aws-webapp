@@ -74,6 +74,7 @@ async function seed() {
         console.error("Greska pri seedovanju baze:", error);
     } finally {
         
+
     }
 }
 
