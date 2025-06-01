@@ -5,6 +5,7 @@ Također je primjetno da postoji dosta koda koji je zajednički za sve stranice,
 U startnom projektu meni linkovi nisu radili van meni.html stranice, tj. učitavali su se unutar iframe elementa, što sam ispravio.
 
 Spirala 1:
+
 Zadatak 1:
 Pozitivno je što su list itemi prikazani jedan pored drugog. Negativna strana postojeće implementacije je bila što se nije koristio flexbox, jer je to otežalo pozicioniranje ikona.
 S obzirom na moj odabir ikona hoveranjem na ikone se uveća ikona zbog specifičnog oblika pojedinih ikona ne prekrije svaka ikona tekst iza same ikone.
