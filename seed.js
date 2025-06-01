@@ -11,7 +11,7 @@ async function seed() {
         
         const korisnik = await Korisnik.create({
             ime: "User",
-            prezime: "Userić",
+            prezime: "Useric",
             username: "user",
             password: hashedPassword,
             admin: false
@@ -31,15 +31,15 @@ async function seed() {
                 opis: "Lijep stan u centru grada."
             }),
             Nekretnina.create({
-                tip_nekretnine: "Kuća",
-                naziv: "Porodična kuća",
+                tip_nekretnine: "Kuca",
+                naziv: "Porodicna kuca",
                 kvadratura: 120,
                 cijena: 250000,
-                tip_grijanja: "Etažno",
-                lokacija: "Ilidža",
+                tip_grijanja: "Etazno",
+                lokacija: "Ilidza",
                 godina_izgradnje: 2010,
                 datum_objave: "2024-05-20",
-                opis: "Prostrana kuća sa dvorištem."
+                opis: "Prostrana kuca sa dvoristem."
             }),
             Nekretnina.create({
                 tip_nekretnine: "Poslovni prostor",
@@ -57,21 +57,21 @@ async function seed() {
         
         for (const nekretnina of nekretnine) {
             await Upit.create({
-                tekst: `Zanima me da li je "${nekretnina.naziv}" još dostupna?`,
+                tekst: `Zanima me da li je "${nekretnina.naziv}" jos dostupna?`,
                 NekretninaId: nekretnina.id,
                 KorisnikId: korisnik.id
             });
 
             await Upit.create({
-                tekst: `Može li se "${nekretnina.naziv}" pogledati uživo?`,
+                tekst: `Moze li se "${nekretnina.naziv}" pogledati uzivo?`,
                 NekretninaId: nekretnina.id,
                 KorisnikId: korisnik.id
             });
         }
 
-        console.log("Baza uspješno seedovana.");
+        console.log("Baza uspjesno seedovana.");
     } catch (error) {
-        console.error("Greška pri seedovanju baze:", error);
+        console.error("Greska pri seedovanju baze:", error);
     } finally {
         
     }
