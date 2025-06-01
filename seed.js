@@ -1,4 +1,4 @@
-const { Korisnik, Nekretnina, Upit, sequelize } = require("./model");
+const { Korisnik, Nekretnina, Upit, sequelize } = require("./models");
 const bcrypt = require("bcrypt");
 
 async function seed() {
