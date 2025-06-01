@@ -72,8 +72,6 @@ async function seed() {
         console.log("Baza uspješno seedovana.");
     } catch (error) {
         console.error("Greška pri seedovanju baze:", error);
-    } finally {
-        await sequelize.close();
     }
 }
 
